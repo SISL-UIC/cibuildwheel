@@ -49,8 +49,8 @@ ref: working-examples
 | [vispy][]                         | ![github icon][] | ![apple icon][] ![linux icon][] ![windows icon][] | Main repository for Vispy |
 | [coverage.py][]                   | ![github icon][] | ![windows icon][] ![apple icon][] ![linux icon][] | The coverage tool for Python |
 | [Line Profiler][]                 | ![github icon][] | ![apple icon][] ![linux icon][] ![windows icon][] | Line-by-line profiling for Python |
-| [PyCryptodome][]                  | ![github icon][] | ![apple icon][] ![linux icon][] ![windows icon][] | A self-contained cryptographic library for Python |
 | [PyAV][]                          | ![github icon][] | ![windows icon][] ![apple icon][] ![linux icon][] | Pythonic bindings for FFmpeg's libraries. |
+| [PyCryptodome][]                  | ![github icon][] | ![apple icon][] ![linux icon][] ![windows icon][] | A self-contained cryptographic library for Python |
 | [PyYAML][]                        | ![github icon][] | ![apple icon][] | Canonical source repository for PyYAML |
 | [pikepdf][]                       | ![github icon][] | ![windows icon][] ![apple icon][] ![linux icon][] | A Python library for reading and writing PDF, powered by QPDF |
 | [numexpr][]                       | ![github icon][] ![travisci icon][] | ![windows icon][] ![apple icon][] ![linux icon][] | Fast numerical array expression evaluator for Python, NumPy, Pandas, PyTables and more |
@@ -77,8 +77,8 @@ ref: working-examples
 | [pybind11 cmake_example][]        | ![github icon][] | ![windows icon][] ![apple icon][] ![linux icon][] ![pyodide icon][] | Example pybind11 module built with a CMake-based build system |
 | [KDEpy][]                         | ![github icon][] | ![windows icon][] ![apple icon][] ![linux icon][] | Kernel Density Estimation in Python |
 | [dd-trace-py][]                   | ![github icon][] | ![windows icon][] ![apple icon][] ![linux icon][] | Uses custom alternate arch emulation on GitHub |
-| [tgcalls][]                       | ![github icon][] | ![apple icon][] ![windows icon][] | Python `pybind11` binding to Telegram's WebRTC library with third party dependencies like `OpenSSL`, `MozJPEG`, `FFmpeg`, etc. |
 | [sourmash][]                      | ![github icon][] | ![apple icon][] ![linux icon][] ![windows icon][] ![pyodide icon][] | Quickly search, compare, and analyze genomic and metagenomic data sets. |
+| [tgcalls][]                       | ![github icon][] | ![apple icon][] ![windows icon][] | Python `pybind11` binding to Telegram's WebRTC library with third party dependencies like `OpenSSL`, `MozJPEG`, `FFmpeg`, etc. |
 | [python-rapidjson][]              | ![travisci icon][] ![gitlab icon][] | ![windows icon][] ![linux icon][] | Python wrapper around rapidjson |
 | [pybind11 python_example][]       | ![github icon][] | ![windows icon][] ![apple icon][] ![linux icon][] ![pyodide icon][] | Example pybind11 module built with a Python-based build system |
 | [Confluent client for Kafka][]    | ![travisci icon][] | ![apple icon][] ![linux icon][] ![windows icon][] | setup in `tools/wheels/build-wheels.bat` |
@@ -92,8 +92,8 @@ ref: working-examples
 | [pillow-heif][]                   | ![github icon][] | ![apple icon][] ![linux icon][] ![windows icon][] | Bindings to libheif library with third party dependencies. Fully automated CI for tests and publishing including Apple Silicon builds. |
 | [keyvi][]                         | ![github icon][] | ![linux icon][] ![apple icon][] | FST based key value index highly optimized for size and lookup performance, utilizes ccache action for improved runtime |
 | [PyGLM][]                         | ![github icon][] | ![apple icon][] ![linux icon][] ![windows icon][] | Fast OpenGL Mathematics (GLM) for Python |
-| [iDynTree][]                      | ![github icon][] | ![linux icon][] | Uses manylinux_2_24 |
 | [power-grid-model][]              | ![github icon][] | ![windows icon][] ![apple icon][] ![linux icon][] | Python/C++ library for distribution power system analysis |
+| [iDynTree][]                      | ![github icon][] | ![linux icon][] | Uses manylinux_2_24 |
 | [TgCrypto][]                      | ![travisci icon][] | ![windows icon][] ![apple icon][] ![linux icon][] | Includes a Windows Travis build. |
 | [streaming-form-data][]           | ![github icon][] | ![apple icon][] ![linux icon][] ![windows icon][] | Streaming parser for multipart/form-data written in Cython |
 | [Imagecodecs (fork)][]            | ![azurepipelines icon][] | ![apple icon][] ![linux icon][] | Over 20 external dependencies in compiled libraries, custom docker image, `libomp`, `openblas` and `install_name_tool` for macOS. |
@@ -110,8 +110,8 @@ ref: working-examples
 | [cf-units][]                      | ![github icon][] | ![apple icon][] ![linux icon][] | Units of measure as required by the Climate and Forecast (CF) Metadata Conventions |
 | [etebase-py][]                    | ![travisci icon][] | ![linux icon][] | Python bindings to a Rust library using `setuptools-rust`, and `sccache` for improved speed. |
 | [SiPM][]                          | ![github icon][] | ![apple icon][] ![linux icon][] | High performance library for SiPM detectors simulation using C++17, OpenMP and AVX2 intrinsics. |
-| [aalink][]                        | ![github icon][] | ![windows icon][] ![apple icon][] ![linux icon][] | Async Python interface for Ableton Link. |
 | [numpythia][]                     | ![github icon][] | ![apple icon][] ![linux icon][] | The interface between PYTHIA and NumPy |
+| [aalink][]                        | ![github icon][] | ![windows icon][] ![apple icon][] ![linux icon][] | Async Python interface for Ableton Link. |
 | [pyjet][]                         | ![github icon][] | ![windows icon][] ![apple icon][] ![linux icon][] | The interface between FastJet and NumPy |
 | [ril][]                           | ![github icon][] | ![windows icon][] ![apple icon][] ![linux icon][] | A python binding to Rust Imaging library using maturin and Pyo3, utilizes Github Action cache to improve speed. Builds abi3 wheels. |
 | [GSD][]                           | ![github icon][] | ![apple icon][] ![linux icon][] ![windows icon][] | Cython and NumPy project with 64-bit wheels. |
@@ -160,8 +160,8 @@ ref: working-examples
 [vispy]: https://github.com/vispy/vispy
 [coverage.py]: https://github.com/nedbat/coveragepy
 [Line Profiler]: https://github.com/pyutils/line_profiler
-[PyCryptodome]: https://github.com/Legrandin/pycryptodome
 [PyAV]: https://github.com/PyAV-Org/PyAV
+[PyCryptodome]: https://github.com/Legrandin/pycryptodome
 [PyYAML]: https://github.com/yaml/pyyaml
 [pikepdf]: https://github.com/pikepdf/pikepdf
 [numexpr]: https://github.com/pydata/numexpr
@@ -188,8 +188,8 @@ ref: working-examples
 [pybind11 cmake_example]: https://github.com/pybind/cmake_example
 [KDEpy]: https://github.com/tommyod/KDEpy
 [dd-trace-py]: https://github.com/DataDog/dd-trace-py
-[tgcalls]: https://github.com/MarshalX/tgcalls
 [sourmash]: https://github.com/sourmash-bio/sourmash
+[tgcalls]: https://github.com/MarshalX/tgcalls
 [python-rapidjson]: https://github.com/python-rapidjson/python-rapidjson
 [pybind11 python_example]: https://github.com/pybind/python_example
 [Confluent client for Kafka]: https://github.com/confluentinc/confluent-kafka-python
@@ -203,8 +203,8 @@ ref: working-examples
 [pillow-heif]: https://github.com/bigcat88/pillow_heif
 [keyvi]: https://github.com/KeyviDev/keyvi
 [PyGLM]: https://github.com/Zuzu-Typ/PyGLM
-[iDynTree]: https://github.com/robotology/idyntree
 [power-grid-model]: https://github.com/PowerGridModel/power-grid-model
+[iDynTree]: https://github.com/robotology/idyntree
 [TgCrypto]: https://github.com/pyrogram/tgcrypto
 [streaming-form-data]: https://github.com/siddhantgoel/streaming-form-data
 [Imagecodecs (fork)]: https://github.com/czaki/imagecodecs_build
@@ -221,8 +221,8 @@ ref: working-examples
 [cf-units]: https://github.com/SciTools/cf-units
 [etebase-py]: https://github.com/etesync/etebase-py
 [SiPM]: https://github.com/EdoPro98/SimSiPM
-[aalink]: https://github.com/artfwo/aalink
 [numpythia]: https://github.com/scikit-hep/numpythia
+[aalink]: https://github.com/artfwo/aalink
 [pyjet]: https://github.com/scikit-hep/pyjet
 [ril]: https://github.com/Cryptex-github/ril-py
 [GSD]: https://github.com/glotzerlab/gsd

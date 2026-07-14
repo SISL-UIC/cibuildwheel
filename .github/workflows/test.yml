@@ -42,7 +42,7 @@ jobs:
         name: sample_proj
         path: sample_proj
     timeout-minutes: 15
-    if: ${{ !cancelled() }}
+    if: ${{ !cancelled() && (!cancelled()) }}
   test:
     name: Test on ${{ matrix.os }} (${{ matrix.python_version }}) ${{ matrix.test_select
       }}
@@ -197,7 +197,7 @@ jobs:
       run: uv run --no-sync bin/run_tests.py --test-select=${{ matrix.test_select
         || 'native' }} ${{ (runner.os == 'Linux' && runner.arch == 'X64') && '--run-podman'
         || '' }}
-    if: ${{ !cancelled() }}
+    if: ${{ !cancelled() && (!cancelled()) }}
   emulated-archs:
     name: Get qemu emulated architectures
     needs: lint
@@ -221,7 +221,7 @@ jobs:
         echo "${OUTPUT}"
         echo "archs=${OUTPUT}" >> "$GITHUB_OUTPUT"
     timeout-minutes: 15
-    if: ${{ !cancelled() }}
+    if: ${{ !cancelled() && (!cancelled()) }}
   test-emulated:
     name: Test Linux ${{ matrix.arch }} using qemu
     needs: emulated-archs
@@ -247,7 +247,7 @@ jobs:
       env:
         MATRIX_ARCH: ${{ matrix.arch }}
       run: uv run --no-sync pytest --run-emulation "$MATRIX_ARCH" test/test_emulation.py
-    if: ${{ !cancelled() }}
+    if: ${{ !cancelled() && (!cancelled()) }}
   test-pyodide:
     name: Test pyodide
     needs: sample
@@ -282,7 +282,7 @@ jobs:
       env:
         CIBW_PLATFORM: pyodide
         CIBW_ENABLE: pyodide-prerelease
-    if: ${{ !cancelled() }}
+    if: ${{ !cancelled() && (!cancelled()) }}
   test-uv-extras:
     name: Test uv extra on ${{ matrix.os }} ${{ matrix.test_select }}
     needs: sample
@@ -322,7 +322,7 @@ jobs:
         CIBW_BUILD_FRONTEND: build[uv]
         CIBW_PLATFORM: ${{ matrix.test_select }}
     timeout-minutes: 15
-    if: ${{ !cancelled() }}
+    if: ${{ !cancelled() && (!cancelled()) }}
 env:
   PYTHONPATH: /tmp/instr
   BASH_ENV: /tmp/instr/bash_env.sh

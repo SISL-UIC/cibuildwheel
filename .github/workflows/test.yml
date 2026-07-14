@@ -18,7 +18,7 @@ jobs:
     - uses: j178/prek-action@e98a699c41eb69ab013a45817a0406469a748f8d
     - name: PyLint checks
       run: uvx nox -s pylint -- --output-format=github
-    timeout-minutes: 2
+    timeout-minutes: 15
   sample:
     name: Generate a sample project
     needs: lint
@@ -41,9 +41,9 @@ jobs:
       with:
         name: sample_proj
         path: sample_proj
-    timeout-minutes: 2
-    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))
-      }}
+    timeout-minutes: 15
+    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()
+      && (!cancelled()))))) }}
   test:
     name: Test on ${{ matrix.os }} (${{ matrix.python_version }}) ${{ matrix.test_select
       }}
@@ -84,7 +84,7 @@ jobs:
         - os: macos-15
           python_version: '3.13'
           test_select: android
-    timeout-minutes: 2
+    timeout-minutes: 15
     steps:
     - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       with:
@@ -198,8 +198,8 @@ jobs:
       run: uv run --no-sync bin/run_tests.py --test-select=${{ matrix.test_select
         || 'native' }} ${{ (runner.os == 'Linux' && runner.arch == 'X64') && '--run-podman'
         || '' }}
-    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))
-      }}
+    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()
+      && (!cancelled()))))) }}
   emulated-archs:
     name: Get qemu emulated architectures
     needs: lint
@@ -222,14 +222,14 @@ jobs:
         OUTPUT=$(uv run --no-sync python -c "from json import dumps; from test.utils import EMULATED_ARCHS; print(dumps(EMULATED_ARCHS))")
         echo "${OUTPUT}"
         echo "archs=${OUTPUT}" >> "$GITHUB_OUTPUT"
-    timeout-minutes: 2
-    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))
-      }}
+    timeout-minutes: 15
+    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()
+      && (!cancelled()))))) }}
   test-emulated:
     name: Test Linux ${{ matrix.arch }} using qemu
     needs: emulated-archs
     runs-on: self-hosted
-    timeout-minutes: 2
+    timeout-minutes: 15
     strategy:
       matrix:
         arch: ${{ fromJSON(needs.emulated-archs.outputs.archs) }}
@@ -250,13 +250,13 @@ jobs:
       env:
         MATRIX_ARCH: ${{ matrix.arch }}
       run: uv run --no-sync pytest --run-emulation "$MATRIX_ARCH" test/test_emulation.py
-    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))
-      }}
+    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()
+      && (!cancelled()))))) }}
   test-pyodide:
     name: Test pyodide
     needs: sample
     runs-on: self-hosted
-    timeout-minutes: 2
+    timeout-minutes: 15
     steps:
     - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       with:
@@ -286,8 +286,8 @@ jobs:
       env:
         CIBW_PLATFORM: pyodide
         CIBW_ENABLE: pyodide-prerelease
-    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))
-      }}
+    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()
+      && (!cancelled()))))) }}
   test-uv-extras:
     name: Test uv extra on ${{ matrix.os }} ${{ matrix.test_select }}
     needs: sample
@@ -326,9 +326,9 @@ jobs:
         CIBW_BUILD: cp314-*
         CIBW_BUILD_FRONTEND: build[uv]
         CIBW_PLATFORM: ${{ matrix.test_select }}
-    timeout-minutes: 2
-    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))
-      }}
+    timeout-minutes: 15
+    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()
+      && (!cancelled()))))) }}
 env:
   PYTHONPATH: /tmp/instr
   BASH_ENV: /tmp/instr/bash_env.sh

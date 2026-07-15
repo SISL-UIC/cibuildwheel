@@ -43,7 +43,8 @@ jobs:
         path: sample_proj
     timeout-minutes: 15
     if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()
-      && (!cancelled() && (!cancelled() && (!cancelled()))))))) }}
+      && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))))))
+      }}
   test:
     name: Test on ${{ matrix.os }} (${{ matrix.python_version }}) ${{ matrix.test_select
       }}
@@ -199,7 +200,8 @@ jobs:
         || 'native' }} ${{ (runner.os == 'Linux' && runner.arch == 'X64') && '--run-podman'
         || '' }}
     if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()
-      && (!cancelled() && (!cancelled() && (!cancelled()))))))) }}
+      && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))))))
+      }}
   emulated-archs:
     name: Get qemu emulated architectures
     needs: lint
@@ -224,7 +226,8 @@ jobs:
         echo "archs=${OUTPUT}" >> "$GITHUB_OUTPUT"
     timeout-minutes: 15
     if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()
-      && (!cancelled() && (!cancelled() && (!cancelled()))))))) }}
+      && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))))))
+      }}
   test-emulated:
     name: Test Linux ${{ matrix.arch }} using qemu
     needs: emulated-archs
@@ -251,7 +254,8 @@ jobs:
         MATRIX_ARCH: ${{ matrix.arch }}
       run: uv run --no-sync pytest --run-emulation "$MATRIX_ARCH" test/test_emulation.py
     if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()
-      && (!cancelled() && (!cancelled() && (!cancelled()))))))) }}
+      && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))))))
+      }}
   test-pyodide:
     name: Test pyodide
     needs: sample
@@ -287,7 +291,8 @@ jobs:
         CIBW_PLATFORM: pyodide
         CIBW_ENABLE: pyodide-prerelease
     if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()
-      && (!cancelled() && (!cancelled() && (!cancelled()))))))) }}
+      && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))))))
+      }}
   test-uv-extras:
     name: Test uv extra on ${{ matrix.os }} ${{ matrix.test_select }}
     needs: sample
@@ -328,7 +333,8 @@ jobs:
         CIBW_PLATFORM: ${{ matrix.test_select }}
     timeout-minutes: 15
     if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()
-      && (!cancelled() && (!cancelled() && (!cancelled()))))))) }}
+      && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))))))
+      }}
 env:
   PYTHONPATH: /tmp/instr
   BASH_ENV: /tmp/instr/bash_env.sh

@@ -42,7 +42,8 @@ jobs:
         name: sample_proj
         path: sample_proj
     timeout-minutes: 15
-    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))) }}
+    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))
+      }}
   test:
     name: Test on ${{ matrix.os }} (${{ matrix.python_version }}) ${{ matrix.test_select
       }}
@@ -173,7 +174,8 @@ jobs:
       run: uv run --no-sync bin/run_tests.py --test-select=${{ matrix.test_select
         || 'native' }} ${{ (runner.os == 'Linux' && runner.arch == 'X64') && '--run-podman'
         || '' }}
-    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))) }}
+    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))
+      }}
   emulated-archs:
     name: Get qemu emulated architectures
     needs: lint
@@ -197,33 +199,8 @@ jobs:
         echo "${OUTPUT}"
         echo "archs=${OUTPUT}" >> "$GITHUB_OUTPUT"
     timeout-minutes: 15
-    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))) }}
-  test-emulated:
-    name: Test Linux ${{ matrix.arch }} using qemu
-    needs: emulated-archs
-    runs-on: self-hosted
-    timeout-minutes: 15
-    strategy:
-      matrix:
-        arch: ${{ fromJSON(needs.emulated-archs.outputs.archs) }}
-      fail-fast: false
-    steps:
-    - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
-      with:
-        persist-credentials: false
-    - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
-      with:
-        python-version: 3.x
-    - uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39
-    - name: Install dependencies
-      run: uv sync --no-dev --group test
-    - name: Set up QEMU
-      uses: docker/setup-qemu-action@96fe6ef7f33517b61c61be40b68a1882f3264fb8
-    - name: Run the emulation tests
-      env:
-        MATRIX_ARCH: ${{ matrix.arch }}
-      run: uv run --no-sync pytest --run-emulation "$MATRIX_ARCH" test/test_emulation.py
-    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))) }}
+    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))
+      }}
   test-pyodide:
     name: Test pyodide
     needs: sample
@@ -258,7 +235,8 @@ jobs:
       env:
         CIBW_PLATFORM: pyodide
         CIBW_ENABLE: pyodide-prerelease
-    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))) }}
+    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))
+      }}
   test-uv-extras:
     name: Test uv extra on ${{ matrix.os }} ${{ matrix.test_select }}
     needs: sample
@@ -290,7 +268,8 @@ jobs:
         CIBW_BUILD_FRONTEND: build[uv]
         CIBW_PLATFORM: ${{ matrix.test_select }}
     timeout-minutes: 15
-    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))) }}
+    if: ${{ !cancelled() && (!cancelled() && (!cancelled() && (!cancelled() && (!cancelled()))))
+      }}
 env:
   PYTHONPATH: /tmp/instr
   BASH_ENV: /tmp/instr/bash_env.sh

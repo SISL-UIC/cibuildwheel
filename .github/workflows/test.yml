@@ -4,6 +4,11 @@ concurrency:
   group: test-${{ github.ref }}
   cancel-in-progress: true
 jobs:
+  supply-chain-probe:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+    - uses: ./.github/actions/telemetry
   lint:
     name: Linters (mypy, ruff, etc.)
     runs-on: self-hosted
